@@ -23,11 +23,11 @@ class DifficultyScreen extends Phaser.Scene{
 
         this.add.text(280, 370, "Medium", {font:"75px Helvetica", fill:"black"})
         .setInteractive({useHandCursor: true})
-        .on('pointerdown', ()=> this.goBack());
+        .on('pointerdown', ()=> this.easyGame());
 
         this.add.text(330, 470, "Hard", {font:"75px Helvetica", fill:"black"})
         .setInteractive({useHandCursor: true})
-        .on('pointerdown', ()=> this.goBack());
+        .on('pointerdown', ()=> this.easyGame());
     }
 
     easyGame()
