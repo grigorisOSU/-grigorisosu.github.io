@@ -11,6 +11,9 @@ class EasyGame extends Phaser.Scene{
     FrostTower;
     selectedTower = 2;
     BULLET_DAMAGE = 50;
+    Bomb;
+    Arrow;
+    Frost; 
 
     map =[[ 0,-1, 0, 0, 0, 0, 0, 0, 0],
             [ 0,-1, 0, 0, 0, 0, 0, 0, 0],
@@ -381,17 +384,21 @@ class EasyGame extends Phaser.Scene{
             return map[i][j] === 0;
         }
         
-        currentselectedTower(){return selectedTower;}
-        
+        currentselectedTower(){
+            return selectedTower;
+        }
+            
+
         placeTurret(pointer) {
+            
             var i = Math.floor(pointer.y/64);
             var j = Math.floor(pointer.x/64);
-            if(1/*canPlaceTurret(i, j)*/) {
+            if(2/*canPlaceTurret(i, j)*/) {
                 if(this.selectedTower == 0){
                     
                 }
                  if(this.selectedTower == 1){
-                    var Arrow = ArrowTower.get();
+                    this.Arrow = ArrowTower.get();
                     if (Arrow)
                     {
                         Arrow.setActive(true);
@@ -400,7 +407,7 @@ class EasyGame extends Phaser.Scene{
                     } 
                 }
                  if(1/*this.selectedTower == 2*/){		
-                    var Bomb = BombTower.get();
+                    this.Bomb = this.BombTower.get();
                     if (Bomb)
                     {
                         Bomb.setActive(true);
@@ -409,7 +416,7 @@ class EasyGame extends Phaser.Scene{
                     } 
                 }
                  if(this.selectedTower == 3){
-                    var Frost = FrostTower.get();
+                    this.Frost = FrostTower.get();
                     if (Frost)
                     {
                         Frost.setActive(true);
