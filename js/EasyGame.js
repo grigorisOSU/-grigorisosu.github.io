@@ -71,7 +71,7 @@ class EasyGame extends Phaser.Scene{
 
 
 
-    preload() {    
+    preload() {     
 
                 this.load.audio('mouseClick', 'assets/sounds/mouseClick.mp3');
                 this.load.audio('backgroundMusicEasy', 'assets/sounds/backgroundMusicEasy.mp3');
