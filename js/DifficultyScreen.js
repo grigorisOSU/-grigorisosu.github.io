@@ -1,14 +1,19 @@
+var mouseClick; 
+
 class DifficultyScreen extends Phaser.Scene{
     constructor(){
         super("chooseDifficulty"); 
     }
 
     preload(){
+        this.load.audio('mouseClick', 'assets/sounds/mouseClick.mp3');
         this.load.image('chooseDiff', 'assets/startScreenDiff.png');
         this.load.image('backButton', 'assets/backButton.png');
     }
 
     create(){
+
+        this.mouseClick = this.sound.add('mouseClick');
 
         this.add.image(400, 300, 'chooseDiff');
         this.add.image(60, 200, 'backButton')
@@ -32,21 +37,25 @@ class DifficultyScreen extends Phaser.Scene{
 
     easyGame()
     {
+        this.mouseClick.play(); 
         this.scene.start("EasyGame");
     }
 
     mediumGame()
     {
+        this.mouseClick.play(); 
         this.scene.start("MediumGame");
     }
 
     hardGame()
     {
+        this.mouseClick.play(); 
         this.scene.start("HardGame");
     }
 
     goBack()
     {
+        this.mouseClick.play(); 
         this.scene.start("newOrLoad");
     }
 }

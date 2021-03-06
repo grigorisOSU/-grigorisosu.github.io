@@ -1,14 +1,19 @@
+var mouseClick; 
+
 class newOrLoadScreen extends Phaser.Scene{
     constructor(){
         super("newOrLoad"); 
     }
 
     preload(){
+        this.load.audio('mouseClick', 'assets/sounds/mouseClick.mp3');
         this.load.image('chooseDiff', 'assets/startScreenDiff.png');
         this.load.image('backButton', 'assets/backButton.png');
     }
 
     create(){
+
+        this.mouseClick = this.sound.add('mouseClick');
 
         this.add.image(400, 300, 'chooseDiff');
         this.add.image(60, 200, 'backButton')
@@ -28,16 +33,19 @@ class newOrLoadScreen extends Phaser.Scene{
 
     newGame()
     {
+        this.mouseClick.play(); 
         this.scene.start("chooseDifficulty");
     }
 
     loadGame()
     {
+        this.mouseClick.play(); 
         this.scene.start("loadGame");
     }
 
     goBack()
     {
+        this.mouseClick.play(); 
         this.scene.start("bootGame");
     }
 }

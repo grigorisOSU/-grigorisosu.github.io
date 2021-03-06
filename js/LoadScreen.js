@@ -1,3 +1,5 @@
+var mouseClick; 
+
 class LoadScreen extends Phaser.Scene{
     constructor(){
         super("loadGame"); 
@@ -6,6 +8,7 @@ class LoadScreen extends Phaser.Scene{
     inputArray=[]; 
 
     preload(){
+        this.load.audio('mouseClick', 'assets/sounds/mouseClick.mp3');
         this.load.image('chooseDiff', 'assets/startScreenDiff.png');
         this.load.image('backButton', 'assets/backButton.png');
         this.load.image('one', 'assets/ArtWork/Numbers/1.png');
@@ -21,6 +24,8 @@ class LoadScreen extends Phaser.Scene{
     }
 
     create(){
+
+        this.mouseClick = this.sound.add('mouseClick');
 
         this.add.image(400, 300, 'chooseDiff');
         this.add.image(60, 200, 'backButton')
@@ -114,6 +119,8 @@ class LoadScreen extends Phaser.Scene{
 
     typeID(num, imageName)
     {
+        this.mouseClick.play(); 
+
         if (this.inputArray.length < 3)
         {
             this.inputArray.push(num);
@@ -125,6 +132,8 @@ class LoadScreen extends Phaser.Scene{
 
     loadGame(num)
     {
+        this.mouseClick.play(); 
+
         if (this.inputArray.length >= 3)
         {
             var IDInput = (this.inputArray[0] * 100) + (this.inputArray[1] * 10) + this.inputArray[2];
@@ -136,6 +145,8 @@ class LoadScreen extends Phaser.Scene{
 
     goBack()
     {
+        this.mouseClick.play(); 
+        
         this.scene.start("newOrLoad");
     }
 }
