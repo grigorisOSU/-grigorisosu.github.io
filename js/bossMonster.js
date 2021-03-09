@@ -18,7 +18,12 @@ var BossMonster = new Phaser.Class({
     startOnPath: function ()
     {
         this.follower.t = 0;
-        this.hp = 9000;
+        if(wave_tracker <= 5){
+		this.hp = 2000;}
+		else {
+            this.hp = 3500;
+            
+        }
         this.slowed = 0;
         path.getPoint(this.follower.t, this.follower.vec);
         
@@ -29,11 +34,16 @@ var BossMonster = new Phaser.Class({
         this.hp -= damage;           
         //this.follower.t.velocity.normalize().scale(1/6000000);
 
-        if (this.hp <= 7000 && this.hp >= 5000)
+         if (this.hp <= 9000 && this.hp >= 5000)
+        {
+            this.tint = 0x00FF00;
+        }
+		
+		if (this.hp <= 5000 && this.hp >= 1000)
         {
             this.tint = 0xff8f8f;
         }
-        else if (this.hp < 5000 && this.hp >= 0)
+        else if (this.hp < 1000 && this.hp >= 0)
         {
             this.tint = 0xfc2b2b;
         }
@@ -77,6 +87,11 @@ var BossMonster = new Phaser.Class({
     },
     update: function (time, delta)
     {
+        if(lostGameEnemyCheck == 1)
+        {
+            this.destroy(); 
+        };
+
         if(this.slowed <= 0){
         this.follower.t += (1/20000) * delta;
         this.slowed = 0;

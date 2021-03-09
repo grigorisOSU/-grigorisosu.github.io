@@ -1,3 +1,5 @@
+// Arrow tower Turret Phaser Scene
+//all internal function for the tower to preform basic function 
   var Arrow = new Phaser.Class({
         Extends: Phaser.GameObjects.Image,
         initialize:
@@ -12,7 +14,7 @@
             map[i][j] = 1;            
         },
 		fire: function() {
-            var enemy = getEnemy(this.x, this.y, 200 * ArrowTowerUpgrade);
+            var enemy = getEnemy(this.x, this.y, 200 + (ArrowTowerUpgrade * 20 ));
             if(enemy) {
                 var angle = Phaser.Math.Angle.Between(this.x, this.y, enemy.x, enemy.y);
                 addBullet(this.x, this.y, angle);
@@ -23,11 +25,14 @@
         {
             if(time > this.nextTic) {
 				this.fire();
-                this.nextTic = time + 1000 ;
+                this.nextTic = time + 1500 - (ArrowTowerUpgrade * 140 );
             }
         }
 });
 
+// the Arrow projectile Phaser Scene
+//addes in the Arrow projectile to the map and sets it in the 
+//derection of the enemy targeted
   var Bullet = new Phaser.Class({
 
         Extends: Phaser.GameObjects.Image,
@@ -77,6 +82,7 @@
 
     });
 	
+	// helper function to add the Bullet to the Map 
   function addBullet(x, y, angle) {
     var bullet = bullets.get();
     if (bullet)
@@ -85,6 +91,7 @@
     }
 }
 
+// helper function to get the enemys location and distance from tower
 function getEnemy(x, y, distance) {
     let arr = []; 
 
@@ -93,31 +100,33 @@ function getEnemy(x, y, distance) {
     var enemyUnits3 = hMonster.getChildren();
     var enemyUnits4 = bMonster.getChildren();
 
-
-    for(var i = 0; i < enemyUnits.length; i++) {       
-        if(enemyUnits[i].active && Phaser.Math.Distance.Between(x, y, enemyUnits[i].x, enemyUnits[i].y) < distance)
-        {
-            arr.push(enemyUnits[i]);
-        }
-   }
-   for(var i = 0; i < enemyUnits2.length; i++) {       
-    if(enemyUnits2[i].active && Phaser.Math.Distance.Between(x, y, enemyUnits2[i].x, enemyUnits2[i].y) < distance)
-    {
-        arr.push(enemyUnits2[i]);
-    }
-    }
-    for(var i = 0; i < enemyUnits3.length; i++) {       
-        if(enemyUnits3[i].active && Phaser.Math.Distance.Between(x, y, enemyUnits3[i].x, enemyUnits3[i].y) < distance)
-        {
-            arr.push(enemyUnits3[i]);
-        }
-        }
     for(var i = 0; i < enemyUnits4.length; i++) {       
         if(enemyUnits4[i].active && Phaser.Math.Distance.Between(x, y, enemyUnits4[i].x, enemyUnits4[i].y) < distance)
         {
             arr.push(enemyUnits4[i]);
         }
         }
+		    for(var i = 0; i < enemyUnits3.length; i++) {       
+        if(enemyUnits3[i].active && Phaser.Math.Distance.Between(x, y, enemyUnits3[i].x, enemyUnits3[i].y) < distance)
+        {
+            arr.push(enemyUnits3[i]);
+        }
+        }
+		   for(var i = 0; i < enemyUnits2.length; i++) {       
+    if(enemyUnits2[i].active && Phaser.Math.Distance.Between(x, y, enemyUnits2[i].x, enemyUnits2[i].y) < distance)
+    {
+        arr.push(enemyUnits2[i]);
+    }
+    }
+    for(var i = 0; i < enemyUnits.length; i++) {       
+        if(enemyUnits[i].active && Phaser.Math.Distance.Between(x, y, enemyUnits[i].x, enemyUnits[i].y) < distance)
+        {
+            arr.push(enemyUnits[i]);
+        }
+   }
+
+
+
 
     if (arr.length != 0 && arr[0].active)
     {
