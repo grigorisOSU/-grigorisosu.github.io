@@ -417,7 +417,7 @@ class HardGame extends Phaser.Scene{
             if(this.gameWon != 1 && this.lostGame != 1 && currentGold >= 500 + (500 * BombTowerUpgrade))
             {
                 this.bombUpgradeCostText.destroy();
-                this.bombUpgradeCostText = this.add.text(640, 438, (500 * 500 + (BombTowerUpgrade + 1)), 
+                this.bombUpgradeCostText = this.add.text(640, 438, (500 + (500 * (BombTowerUpgrade + 1))), 
                 {font: "25px Arial", 
                 fill: "#000000", 
                 align: "center" });
