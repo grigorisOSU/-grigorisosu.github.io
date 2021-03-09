@@ -326,7 +326,7 @@ class MediumGame extends Phaser.Scene{
         .setData('active', false)
         .on('pointerover', () => {bombButton.setTint(0x757575)})
         .on('pointerover', () => {this.bombTowerInfo = this.add.image(110, 475, 'bombTowerInfo').setScale(.4)})
-        .on('pointerover', () => {this.bombCostText = this.add.text(65, 438, 150 + (bombtowersplased * 50), 
+        .on('pointerover', () => {this.bombCostText = this.add.text(65, 438, 500 + (bombtowersplased * 50), 
             {font: "25px Arial", 
              fill: "#000000", 
              align: "center" });})
@@ -487,7 +487,7 @@ class MediumGame extends Phaser.Scene{
          fill: "#ffffff", 
          align: "center" });
 
-        this.bombTowerTracker = this.add.text(75, 530, 150 + (bombtowersplased * 50), 
+        this.bombTowerTracker = this.add.text(75, 530, 500 + (bombtowersplased * 50), 
          {font: "17px Arial", 
           fill: "#ffffff", 
           align: "center" });
@@ -951,7 +951,7 @@ class MediumGame extends Phaser.Scene{
         this.updateHealth();
 
         this.arrowCostTracker.text = 150 + (arrowtowersplased * 50);
-        this.bombTowerTracker.text = 150 + (bombtowersplased * 50);
+        this.bombTowerTracker.text = 500 + (bombtowersplased * 50);
         this.frostTowerTracker.text = 300 + (frosttowersplased * 50);
 
         this.arrowUpgradeTracker.text = 500 * ArrowTowerUpgrade;

@@ -64,11 +64,11 @@
 				arrowtowersplased++;
 			} 
 		}
-		 if(currentselectedTower() == 2 && currentGold >= 150 + (bombtowersplased * 50)){		
+		 if(currentselectedTower() == 2 && currentGold >= 300 + (bombtowersplased * 50)){		
 			var Bomb = BombTower.get();
 			if (Bomb)
 			{
-				changegold(150 + (bombtowersplased * 50));
+				changegold(300 + (bombtowersplased * 50));
 				Bomb.setActive(true);
 				Bomb.setVisible(true);
 				Bomb.place(i, j);
