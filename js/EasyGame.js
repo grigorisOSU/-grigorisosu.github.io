@@ -670,7 +670,6 @@ class EasyGame extends Phaser.Scene{
         {
             this.currentWaveImage = this.add.image(470, 30, 'one').setScale(1.4);
             this.addMonsters(40,0,0,0); 
-            finalSpawned = 1; 
         }
         else if (this.currentWave == 2)
         {
