@@ -12,7 +12,7 @@ var MediumMonster = new Phaser.Class({
         
         this.follower = { t: 0, vec: new Phaser.Math.Vector2() };
         this.hp = 0;
-        this.eMonsterPower = 10;
+        this.mMonsterPower = 10;
         var slowed = 0;
     },
 	//function set the path the monster will follow
@@ -99,7 +99,7 @@ var MediumMonster = new Phaser.Class({
         {
         this.setActive(false);
         this.setVisible(false);
-        this.scene.takeDamage(this.eMonsterPower);
+        this.scene.takeDamage(this.mMonsterPower);
         this.destroy();
         }
 

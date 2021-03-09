@@ -789,51 +789,51 @@ class HardGame extends Phaser.Scene{
 
     //updates health of castle and hearts
     updateHealth()
+    {
+        
+        this.healthText.setText(this.castleHealth);
+
+        if(this.castleHealth < 100 && this.heart100 != null)
         {
-            
-            this.healthText.setText(this.castleHealth);
-    
-            if(this.castleHealth < 100 && this.castleHealth > 90 && this.heart100 != 'undefined')
-            {
-                this.heart100.destroy(); 
-            }
-            else if(this.castleHealth < 90 && this.castleHealth > 80 && this.heart90 != 'undefined')
-            {
-                this.heart90.destroy(); 
-            }
-            else if(this.castleHealth < 80 && this.castleHealth > 70 && this.heart80 != 'undefined')
-            {
-                this.heart80.destroy(); 
-            }
-            else if(this.castleHealth < 70 && this.castleHealth > 60 && this.heart70 != 'undefined')
-            {
-                this.heart70.destroy(); 
-            }
-            else if(this.castleHealth < 60 && this.castleHealth > 50 && this.heart60 != 'undefined')
-            {
-                this.heart60.destroy(); 
-            }
-            else if(this.castleHealth <50 && this.castleHealth > 40 && this.heart50 != 'undefined')
-            {
-                this.heart50.destroy(); 
-            }
-            else if(this.castleHealth <40 && this.castleHealth > 30 && this.heart40 != 'undefined')
-            {
-                this.heart40.destroy(); 
-            }
-            else if(this.castleHealth <30 && this.castleHealth > 20 && this.heart30 != 'undefined')
-            {
-                this.heart30.destroy(); 
-            }
-            else if(this.castleHealth <20 && this.castleHealth > 10 && this.heart20 != 'undefined')
-            {
-                this.heart20.destroy(); 
-            }
-            else if(this.castleHealth <10 && this.castleHealth > 0 && this.heart10 != 'undefined')
-            {
-                this.heart10.destroy(); 
-            }
+            this.heart100.destroy(); 
         }
+        if(this.castleHealth < 90 && this.heart90 != null)
+        {
+            this.heart90.destroy(); 
+        }
+        if(this.castleHealth < 80 && this.heart80 != null)
+        {
+            this.heart80.destroy(); 
+        }
+        if(this.castleHealth < 70 && this.heart70 != null)
+        {
+            this.heart70.destroy(); 
+        }
+        if(this.castleHealth < 60 && this.heart60 != null)
+        {
+            this.heart60.destroy(); 
+        }
+        if(this.castleHealth <50 && this.heart50 != null)
+        {
+            this.heart50.destroy(); 
+        }
+        if(this.castleHealth <40 && this.heart40 != null)
+        {
+            this.heart40.destroy(); 
+        }
+        if(this.castleHealth <30 && this.heart30 != null)
+        {
+            this.heart30.destroy(); 
+        }
+        if(this.castleHealth <20 && this.heart20 != null)
+        {
+            this.heart20.destroy(); 
+        }
+        if(this.castleHealth <10 && this.heart10 != null)
+        {
+            this.heart10.destroy(); 
+        }
+    }
 
     //checks if user won the game 
     checkWon()

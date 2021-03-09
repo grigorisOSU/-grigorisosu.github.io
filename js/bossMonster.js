@@ -11,7 +11,7 @@ var BossMonster = new Phaser.Class({
         
         this.follower = { t: 0, vec: new Phaser.Math.Vector2() };
         this.hp = 0;
-        this.eMonsterPower = 20;
+        this.bMonsterPower = 20;
         var slowed = 0;
     },
 
@@ -108,7 +108,7 @@ var BossMonster = new Phaser.Class({
         {
         this.setActive(false);
         this.setVisible(false);
-        this.scene.takeDamage(this.eMonsterPower);
+        this.scene.takeDamage(this.bMonsterPower);
         this.destroy();
         }
 
