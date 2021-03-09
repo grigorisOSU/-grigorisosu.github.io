@@ -7,6 +7,7 @@ class StartScreen extends Phaser.Scene{
 
     //preloads screens, sounds and images for the menu and user navigations
     preload(){
+        this.load.audio('hitMarker', 'assets/sounds/hitMarker.mp3');
         this.load.audio('mouseClick', 'assets/sounds/mouseClick.mp3');
         this.load.image('startScreen', 'assets/startScreenMain.png');
 
@@ -31,6 +32,7 @@ class StartScreen extends Phaser.Scene{
     //creates sound image and sets start screen image and button
     create(){
 
+        hitMarkerSound = this.sound.add('hitMarker', {volume: 0.1});
         this.mouseClick = this.sound.add('mouseClick');
 
         this.add.image(400, 300, 'startScreen');

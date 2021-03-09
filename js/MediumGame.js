@@ -58,7 +58,6 @@ class MediumGame extends Phaser.Scene{
 
     //preloads all images and music used in medium game
     preload() {    
-
                 this.load.audio('mouseClick', 'assets/sounds/mouseClick.mp3');
                 this.load.audio('backgroundMusicMedium', 'assets/sounds/backgroundMusicMedium.mp3');
                 this.load.image('arrowTowerInfo', 'assets/ArrowTowerSign.png'); 

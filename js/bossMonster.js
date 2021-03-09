@@ -51,6 +51,7 @@ var BossMonster = new Phaser.Class({
 
         // if hp drops below 0 we deactivate this enemy
         if(this.hp <= 0) {
+            playHitMarker();
             this.destroy();   
             currentGold = currentGold + 150;	
             this.clearTint();			
@@ -63,6 +64,7 @@ var BossMonster = new Phaser.Class({
         this.slowed = 100 * FrostTowerUpgrade;
         // if hp drops below 0 we deactivate this enemy
         if(this.hp <= 0) {
+            playHitMarker();
             currentGold = currentGold + 150;
             this.destroy();        
         }
@@ -72,6 +74,7 @@ var BossMonster = new Phaser.Class({
         this.hp -= bombDamage;
         addBombExplosion(this.follower.vec.x, this.follower.vec.y)
         if(this.hp <= 0) {
+            playHitMarker();
             currentGold = currentGold + 150;
             this.destroy();        
         }
@@ -81,6 +84,7 @@ var BossMonster = new Phaser.Class({
         this.hp -= bombDamageExplosion;
 
         if(this.hp <= 0) {
+            playHitMarker();
             currentGold = currentGold + 150;
             this.destroy();        
         }

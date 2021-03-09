@@ -44,6 +44,7 @@
 	var lostGameEnemyCheck; 
 	var wonGameCheck; 
 	var finalSpawned; 
+	var hitMarkerSound; 
 	
 
 
@@ -92,6 +93,11 @@
 		}		
 }
 
+//function to play hit marker sound when an enemy dies
+	function playHitMarker()
+	{
+		hitMarkerSound.play();
+	}
 
 //function to reduse the current gold by a amount sent
 	function changegold(goldreduction){

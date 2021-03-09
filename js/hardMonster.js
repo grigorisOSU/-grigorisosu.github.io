@@ -32,8 +32,9 @@ var HardMonster = new Phaser.Class({
 
         // if hp drops below 0 we deactivate this enemy
         if(this.hp <= 0) {
+            playHitMarker();
             this.destroy();   
-           increasegold(3);
+            increasegold(3);
             this.clearTint();			
         }
     },
@@ -44,7 +45,8 @@ var HardMonster = new Phaser.Class({
         this.slowed = 100 * FrostTowerUpgrade;
         // if hp drops below 0 we deactivate this enemy
         if(this.hp <= 0) {
-                increasegold(3);	
+            playHitMarker();
+            increasegold(3);	
             this.destroy();        
         }
     },
@@ -53,6 +55,7 @@ var HardMonster = new Phaser.Class({
         this.hp -= bombDamage;
         addBombExplosion(this.follower.vec.x, this.follower.vec.y)
         if(this.hp <= 0) {
+            playHitMarker();
             increasegold(3);
             this.destroy();        
         }
@@ -62,6 +65,7 @@ var HardMonster = new Phaser.Class({
         this.hp -= bombDamageExplosion;
 
         if(this.hp <= 0) {
+            playHitMarker();
             increasegold(3);
             this.destroy();        
         }

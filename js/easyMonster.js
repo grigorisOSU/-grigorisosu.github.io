@@ -32,6 +32,7 @@
 
             // if hp drops below 0 we deactivate this enemy
             if(this.hp <= 0) {
+                playHitMarker();
 			    this.destroy();   
 				increasegold(1);
                 this.clearTint();			
@@ -44,6 +45,7 @@
 			this.slowed = 100 * FrostTowerUpgrade;
             // if hp drops below 0 we deactivate this enemy
             if(this.hp <= 0) {
+                playHitMarker();
 				increasegold(1);
                 this.destroy();        
             }
@@ -53,6 +55,7 @@
             this.hp -= bombDamage;
 			addBombExplosion(this.follower.vec.x, this.follower.vec.y)
             if(this.hp <= 0) {
+                playHitMarker();
 				increasegold(1);
                 this.destroy();        
             }
@@ -62,6 +65,7 @@
             this.hp -= bombDamageExplosion;
 
             if(this.hp <= 0) {
+                playHitMarker();
 				increasegold(1);
                 this.destroy();        
             }
