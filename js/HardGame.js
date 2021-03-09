@@ -377,6 +377,7 @@ class HardGame extends Phaser.Scene{
         .on('pointerup', () => {
             if(this.gameWon != 1 && this.lostGame != 1 && currentGold >= (500 * ArrowTowerUpgrade))
             {
+                this.arrowUpgradeCostText.destroy();
                 this.arrowUpgradeCostText = this.add.text(640, 438, (500 * (ArrowTowerUpgrade + 1)), 
                 {font: "25px Arial", 
                 fill: "#000000", 
@@ -408,21 +409,22 @@ class HardGame extends Phaser.Scene{
         .setData('name', 'BombU')
         .on('pointerover', () => {bombUpgrade.setTint(0x757575)})
         .on('pointerover', () => {this.bombUpgradeInfo = this.add.image(680, 475, 'bombUpgradeInfo').setScale(.4)})
-        .on('pointerover', () => {this.bombUpgradeCostText = this.add.text(640, 438, (500 * BombTowerUpgrade), 
+        .on('pointerover', () => {this.bombUpgradeCostText = this.add.text(640, 438, 500 + (500 * BombTowerUpgrade), 
             {font: "25px Arial", 
              fill: "#000000", 
              align: "center" });})
         .on('pointerup', () => {
-            if(this.gameWon != 1 && this.lostGame != 1 && currentGold >= (500 * BombTowerUpgrade))
+            if(this.gameWon != 1 && this.lostGame != 1 && currentGold >= 500 + (500 * BombTowerUpgrade))
             {
-                this.bombUpgradeCostText = this.add.text(640, 438, (500 * (BombTowerUpgrade + 1)), 
+                this.bombUpgradeCostText.destroy();
+                this.bombUpgradeCostText = this.add.text(640, 438, (500 * 500 + (BombTowerUpgrade + 1)), 
                 {font: "25px Arial", 
                 fill: "#000000", 
                 align: "center" });
             }
             })
         .on('pointerdown', () => {
-            if(this.gameWon != 1 && this.lostGame != 1 && currentGold >= (500 * BombTowerUpgrade))
+            if(this.gameWon != 1 && this.lostGame != 1 && currentGold >= 500 + (500 * BombTowerUpgrade))
             {
                 this.bombUpgradeCostText.destroy()
             }})
@@ -430,10 +432,10 @@ class HardGame extends Phaser.Scene{
         .on('pointerout', () => {this.bombUpgradeInfo.destroy()})
         .on('pointerout', () => {bombUpgrade.clearTint()})
         .on('pointerup', function () {
-		if(currentGold >= (500 * BombTowerUpgrade)){
+		if(currentGold >= 500 + (500 * BombTowerUpgrade)){
             if(this.gameWon != 1 && this.lostGame != 1)
             {
-                changegold((500 * BombTowerUpgrade));
+                changegold(500 + (500 * BombTowerUpgrade));
                 BombTowerUpgrade = BombTowerUpgrade + 1;
             }
 		}
@@ -452,6 +454,7 @@ class HardGame extends Phaser.Scene{
         .on('pointerup', () => {
             if(this.gameWon != 1 && this.lostGame != 1 && currentGold >= (500 * FrostTowerUpgrade))
             {
+                this.frostUpgradeCostText.destroy();
                 this.frostUpgradeCostText = this.add.text(640, 438, (500 * (FrostTowerUpgrade + 1)), 
                 {font: "25px Arial", 
                 fill: "#000000", 
@@ -501,7 +504,7 @@ class HardGame extends Phaser.Scene{
             fill: "#ffffff", 
             align: "center" });
    
-        this.bombUpgradeTracker = this.add.text(655, 530, (500 * BombTowerUpgrade), 
+        this.bombUpgradeTracker = this.add.text(655, 530, 500 + (500 * BombTowerUpgrade), 
             {font: "17px Arial", 
              fill: "#ffffff", 
              align: "center" });
@@ -953,7 +956,7 @@ class HardGame extends Phaser.Scene{
         this.frostTowerTracker.text = 300 + (frosttowersplased * 50);
 
         this.arrowUpgradeTracker.text = 500 * ArrowTowerUpgrade;
-        this.bombUpgradeTracker.text =  500 * BombTowerUpgrade;
+        this.bombUpgradeTracker.text =  500 + 500 * BombTowerUpgrade;
         this.frostUpgradeTracker.text =  500 * FrostTowerUpgrade;
 
 		this.currentGoldTotal.text =  currentGold; 
