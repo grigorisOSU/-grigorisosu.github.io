@@ -162,7 +162,7 @@ class MediumGame extends Phaser.Scene{
         this.gameWon = 0; 
         this.lostGame = 0; 
         this.castleHealth = 100;
-		currentGold = 5800;
+		currentGold = 6000;
 
         //sets castle fires when castle is damaged 
         this.fire1 = false;
