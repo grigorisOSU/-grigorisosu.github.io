@@ -22,6 +22,8 @@
 * https://academy.zenva.com/course/build-a-tower-defense-game-with-phaser-3/
 * https://phaser.discourse.group/t/setinteractive-hitareacallback-usage-help/851
 * https://phasergames.com/extend-a-sprite-in-phaser-3/
+* https://pipoya.itch.io/pipoya-rpg-tileset-32x32
+* https://finalbossblues.itch.io/dark-dimension-tileset
 */
 
 //medium game phaser scene 
