@@ -669,7 +669,7 @@ class MediumGame extends Phaser.Scene{
         if (this.currentWave == 1)
         {
             this.currentWaveImage = this.add.image(470, 30, 'one').setScale(1.4);
-            this.addMonsters(40,0,0,0); 
+            this.addMonsters(60,0,0,0); 
         }
         else if (this.currentWave == 2)
         {
